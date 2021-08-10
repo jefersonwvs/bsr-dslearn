@@ -21,3 +21,7 @@ INSERT INTO tb_offer (edition, start_Moment, end_Moment, course_id) VALUES ('2.0
 INSERT INTO tb_resource (title, description, position, img_Uri, type, offer_id) VALUES ('Trilha HTML', 'Trilha principal do curso', 1, 'https://www.maxpixel.net/static/photo/1x/Icon-Html5-Logo-Html-2582748.png', 1, 1);
 INSERT INTO tb_resource (title, description, position, img_Uri, type, offer_id) VALUES ('Fórum', 'Tire suas dúvidas', 2, 'https://www.maxpixel.net/static/photo/1x/Icon-Html5-Logo-Html-2582748.png', 2, 1);
 INSERT INTO tb_resource (title, description, position, img_Uri, type, offer_id) VALUES ('Lives ', 'Lives exclusivas para a turma', 3, 'https://www.maxpixel.net/static/photo/1x/Icon-Html5-Logo-Html-2582748.png', 0, 1);
+
+INSERT INTO tb_section (title, description, position, img_Uri, resource_id, prerequisite_id) VALUES ('Capítulo I', 'Aprenda a usar tags básicas', 1, 'https://www.maxpixel.net/static/photo/1x/Icon-Html5-Logo-Html-2582748.png', 1, null);
+INSERT INTO tb_section (title, description, position, img_Uri, resource_id, prerequisite_id) VALUES ('Capítulo II', 'O que são tags semânticas?', 2, 'https://www.maxpixel.net/static/photo/1x/Icon-Html5-Logo-Html-2582748.png', 1, 1);
+INSERT INTO tb_section (title, description, position, img_Uri, resource_id, prerequisite_id) VALUES ('Capítulo III', 'Integração entre HTML e CSS', 3, 'https://www.maxpixel.net/static/photo/1x/Icon-Html5-Logo-Html-2582748.png', 1, 2);
