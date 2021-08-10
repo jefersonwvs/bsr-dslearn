@@ -28,11 +28,11 @@ public class Offer implements Serializable {
 	private Instant startMoment;
 	private Instant endMoment;
 	
-	@ManyToOne
+	@ManyToOne // MUITAS ofertas podem ser de UM mesmo curso
 	@JoinColumn(name = "course_id")
 	private Course course;
 	
-	@OneToMany(mappedBy = "offer")
+	@OneToMany(mappedBy = "offer") // UMA oferta é composta de MUITOS recursos
 	private List<Resource> resources = new ArrayList<>();
 		
 	public Offer() { }

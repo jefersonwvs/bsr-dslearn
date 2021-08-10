@@ -31,13 +31,17 @@ public class User implements Serializable {
 	private String email;
 	private String password;
 	
+	/* 
+	 * um User pode ter vários roles, mas não pode repeti-los, 
+	 * o que é garantido pela tipo de dados Set 
+	 */
 	@ManyToMany(fetch = FetchType.EAGER)
 	@JoinTable(name = "tb_user_role", 
 				  joinColumns = @JoinColumn(name = "user_id"),
 				  inverseJoinColumns = @JoinColumn(name = "role_id"))
 	private Set<Role> roles = new HashSet<>();
 	
-	@OneToMany(mappedBy = "user")
+	@OneToMany(mappedBy = "user") // UM usuário pode possuir MUITAS notificações
 	private List<Notification> notifications = new ArrayList<>();
 	
 	public User() { }

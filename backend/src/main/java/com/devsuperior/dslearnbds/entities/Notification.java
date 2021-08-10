@@ -29,7 +29,7 @@ public class Notification implements Serializable {
 	private Boolean read;
 	private String route;
 	
-	@ManyToOne
+	@ManyToOne // MUITAS notificações podem ser atribuídas a UM usuário
 	@JoinColumn(name = "user_id")
 	private User user;
 	

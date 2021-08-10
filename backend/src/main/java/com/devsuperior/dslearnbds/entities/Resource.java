@@ -28,7 +28,7 @@ public class Resource implements Serializable {
 	private String imgUri;
 	private ResourceType type;
 
-	@ManyToOne
+	@ManyToOne // MUITOS recursos fazem parte de UMA única oferta
 	@JoinColumn(name = "offer_id")
 	private Offer offer;
 	

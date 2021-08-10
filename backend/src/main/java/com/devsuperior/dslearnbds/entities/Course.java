@@ -25,7 +25,7 @@ public class Course implements Serializable {
 	private String imgUri;
 	private String imgGrayUri;
 	
-	@OneToMany(mappedBy = "course")
+	@OneToMany(mappedBy = "course") // UM curso pode ser ofertado MUITAS vezes
 	private List<Offer> offers = new ArrayList<>();
 	
 	public Course() { }
