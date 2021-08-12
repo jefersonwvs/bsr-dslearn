@@ -35,15 +35,13 @@ public class Notification implements Serializable {
 	@JoinColumn(name = "user_id")
 	private User user;
 	
-	public Notification() {
-		this.read = false;
-	}
+	public Notification() { }
 
-	public Notification(Long id, String text, Instant moment, String route, User user) {
+	public Notification(Long id, String text, Instant moment, Boolean read, String route, User user) {
 		this.id = id;
 		this.text = text;
 		this.moment = moment;
-		this.read = false;
+		this.read = read;
 		this.route = route;
 		this.user = user;
 	}
