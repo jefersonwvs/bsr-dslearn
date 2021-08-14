@@ -24,8 +24,12 @@ public class UserService implements UserDetailsService {
 	@Autowired
 	private UserRepository repository;
 	
+	@Autowired
+	private AuthService authService;
+	
 	@Transactional(readOnly = true)
 	public UserDTO findById(Long id) {
+		authService.validateSelfOrAdmin(id);
 		Optional<User> obj = repository.findById(id);
 		User entity = obj.orElseThrow(() -> new ResourceNotFoundException("Entidade não encontrada!"));
 		return new UserDTO(entity);
@@ -36,7 +40,7 @@ public class UserService implements UserDetailsService {
 		User user = repository.findByEmail(username);
 		if (user == null) {
 			logger.error("Usuário não encontrado: " + username);
-			throw new UsernameNotFoundException("Email não encontrado");
+			throw new UsernameNotFoundException("E-mail não encontrado");
 		}
 		logger.info("Usuário encontrado: " + username);
 		return user;
